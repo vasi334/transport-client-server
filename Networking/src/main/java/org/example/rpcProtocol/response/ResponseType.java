@@ -1,0 +1,5 @@
+package org.example.rpcProtocol.response;
+
+public enum ResponseType {
+    OK, ERROR, UPDATE, GET_TRIPS, GET_TRIP, GET_TRIP_ID, GET_BOOKED_SEATS, GET_CUSTOMER_NAME, GET_CHECK_IF_SEAT_RESERVED, GET_ALL_RESERVATIONS
+}

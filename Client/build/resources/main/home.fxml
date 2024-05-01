@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.HomeController">
+<content>
+    <AnchorPane prefHeight="400" prefWidth="600" />
+    <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <VBox fx:id="tripsDisplaySection" alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS">
+            <Label text="Trips" />
+            <TableView fx:id="tripsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200" prefWidth="500">
+                <columns>
+                    <TableColumn fx:id="destinationColumn" text="Destination" />
+                    <TableColumn fx:id="dateColumn" text="Date" />
+                    <TableColumn fx:id="timeColumn" text="Time" />
+                    <TableColumn fx:id="availableSeatsColumn" text="Available Seats" />
+                </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TableView>
+        </VBox>
+        <VBox fx:id="singleTripDisplaySection" alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS">
+            <Label text="Searched Trip" />
+            <TableView fx:id="singleTripTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50" prefWidth="500">
+                <columns>
+                    <TableColumn fx:id="singleDestinationColumn" text="Destination" />
+                    <TableColumn fx:id="singleDateColumn" text="Date" />
+                    <TableColumn fx:id="singleTimeColumn" text="Time" />
+                    <TableColumn fx:id="singleAvailableSeatsColumn" text="Available Seats" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox fx:id="seatInformationSection" alignment="CENTER" spacing="10">
+            <Label text="Seat Information" />
+            <TableView fx:id="seatInformationTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200" prefWidth="500">
+                <columns>
+                    <TableColumn fx:id="seatNumberColumn" text="Seat Number" />
+                    <TableColumn fx:id="customerNameColumn" text="Customer Name" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox fx:id="searchSection" alignment="CENTER" spacing="10">
+            <Label text="Search Trip" />
+            <TextField fx:id="searchDestinationField" promptText="Destination" />
+            <TextField fx:id="searchDateTimeField" promptText="Date" />
+            <TextField fx:id="searchTimeField" promptText="Time" />
+            <Button onAction="#handleSearch" text="Search" />
+        </VBox>
+
+        <VBox fx:id="bookingSection" alignment="CENTER" spacing="10">
+            <Label text="Book Trip" />
+            <TextField fx:id="customerFirstNameField" promptText="Customer First Name" />
+            <TextField fx:id="customerLastNameField" promptText="Customer Last Name" />
+            <TextField fx:id="destinationField" promptText="Destination" />
+            <TextField fx:id="destinationDateField" promptText="Destination date" />
+            <TextField fx:id="destinationTimeField" promptText="Destination time" />
+            <TextField fx:id="numberOfSeatsField" promptText="Seat Number" />
+            <Button fx:id="bookSeat" onAction="#handleBookSeat" text="Book Seats" />
+        </VBox>
+
+        <Button fx:id="buttonLogout" onAction="#handleLogout" text="Logout" />
+    </VBox>
+</content>
+</ScrollPane>
